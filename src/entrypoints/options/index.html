@@ -1,17 +1,24 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BookmarkHub,sync bookmarks across different browsers</title>
-    <meta name="manifest.open_in_tab" content="false" />
-    <!-- <meta name="manifest.chrome_style" content="false" /> -->
-    <meta name="manifest.browser_style" content="false" />
- 
-  </head>
-  <body>
-    <div id="root"></div>
+
+<head>
+    <!-- 基础元数据 -->
+    <meta charset="UTF-8" /> <!-- 设置字符编码为UTF-8 -->
+    <meta name="color-scheme" content="dark light" /> <!-- 支持深色/浅色主题切换 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 移动端适配 -->
+    <title>BookmarkHub,sync bookmarks across different browsers</title> <!-- 页面标题 -->
+
+    <!-- 扩展配置元数据 -->
+    <meta name="manifest.open_in_tab" content="false" /> <!-- 禁止在独立标签页中打开选项页 -->
+    <meta name="manifest.browser_style" content="false" /> <!-- 禁用浏览器默认样式 -->
+</head>
+
+<body>
+    <!-- React 挂载点 -->
+    <div id="root"></div> <!-- React组件将渲染到这里 -->
+
+    <!-- 入口脚本：加载options.tsx（WXT/Vite会将其编译为JS） -->
     <script type="module" src="./options.tsx"></script>
-  </body>
+</body>
+
 </html>

@@ -1,12 +1,19 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="manifest.type" content="browser_action" />
-  </head>
-  <body>
-    <div id="root"></div>
+
+<head>
+    <!-- 基础元数据 -->
+    <meta charset="UTF-8" /> <!-- 字符编码 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- 移动端适配 -->
+    <meta name="manifest.type" content="browser_action" /> <!-- 声明为浏览器扩展的弹出窗口 -->
+</head>
+
+<body>
+    <!-- React 挂载点 -->
+    <div id="root"></div> <!-- React 组件将渲染到这里 -->
+
+    <!-- 入口脚本：加载 popup.tsx（WXT/Vite 会将其编译为 JS） -->
     <script type="module" src="./popup.tsx"></script>
-  </body>
+</body>
+
 </html>
