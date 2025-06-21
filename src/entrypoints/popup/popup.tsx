@@ -11,8 +11,9 @@ import { Dropdown, Badge } from 'react-bootstrap'; // Bootstrap的下拉菜单�
 import { IconContext } from 'react-icons' // 用于统一设置图标样式
 import {
     AiOutlineCloudUpload, AiOutlineCloudDownload,
-    AiOutlineCloudSync, AiOutlineSetting, AiOutlineClear,
-    AiOutlineInfoCircle, AiOutlineGithub
+    AiOutlineSetting, AiOutlineClear,
+    AiOutlineInfoCircle, AiOutlineGithub,
+    AiOutlineBook, AiOutlineCloud
 } from 'react-icons/ai' // 从Ant Design图标库导入所需图标
 import 'bootstrap/dist/css/bootstrap.min.css'; // 引入Bootstrap基础样式
 import './popup.css' // 引入自定义样式
@@ -53,12 +54,20 @@ const Popup: React.FC = () => {
      * 从本地存储中获取书签计数并更新状态
      */
     useEffect(() => {
-        let getSetting = async () => {
-            let data = await browser.storage.local.get(["localCount", "remoteCount"]);
-            setCount({ local: data["localCount"], remote: data["remoteCount"] });
-        }
-        getSetting();
-    }, []) // 空依赖数组表示只在组件挂载时执行一次
+        const loadCounts = async () => {
+            try {
+                const data = await browser.storage.local.get(["localCount", "remoteCount"]);
+                setCount({
+                    local: data.localCount?.toString() || "0", // 确保为字符串
+                    remote: data.remoteCount?.toString() || "0"
+                });
+            } catch (error) {
+                console.error("加载书签计数失败:", error);
+                setCount({ local: "0", remote: "0" }); // 保持默认值
+            }
+        };
+        loadCounts();
+    }, []); // 空依赖数组表示只在组件挂载时执行一次
 
     /**
      * 渲染组件UI
@@ -88,6 +97,19 @@ const Popup: React.FC = () => {
                     {browser.i18n.getMessage('removeAllBookmarks')}
                 </Dropdown.Item>
 
+                {/* 书签数量展示区 */}
+                <Dropdown.ItemText className="count-display">
+                    <span>
+                        <AiOutlineBook className="dropdown-item-icon" />
+                        {count.local}
+                    </span>
+                    <span>
+                        <AiOutlineCloud className="dropdown-item-icon" />
+                        {count.remote}
+                    </span>
+                </Dropdown.ItemText>
+
+
                 <Dropdown.Divider /> {/* 分隔线 */}
 
                 {/* 设置按钮 */}
@@ -102,12 +124,6 @@ const Popup: React.FC = () => {
                     <a href="https://github.com/dudor/BookmarkHub" target="_blank">
                         {browser.i18n.getMessage('help')}
                     </a>|
-                    <Badge id="localCount" variant="light" title={browser.i18n.getMessage('localCount')}>
-                        {count["local"]}
-                    </Badge>/
-                    <Badge id="remoteCount" variant="light" title={browser.i18n.getMessage('remoteCount')}>
-                        {count["remote"]}
-                    </Badge>|
                     <a href="https://github.com/dudor" target="_blank" title={browser.i18n.getMessage('author')}>
                         <AiOutlineGithub />
                     </a>

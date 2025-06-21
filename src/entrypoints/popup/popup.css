@@ -38,3 +38,28 @@
 .dropdown-item-text a {
     color: inherit;
 }
+
+.count-display {
+    display: flex;
+    justify-content: flex-start;
+    gap: 60px;
+    padding: 0.35rem 1rem !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+    border-top: 1px solid #f0f0f0 !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+.count-display span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    pointer-events: auto !important;
+}
+
+.count-display .dropdown-item-icon {
+    width: 1rem !important;
+    height: 1rem !important;
+    color: #555 !important;
+}
