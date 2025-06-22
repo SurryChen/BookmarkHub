@@ -12,6 +12,7 @@ export class SettingBase implements Options {
 export class Setting extends SettingBase {
     private constructor() { super() }
     static async build() {
+        // 读取配置信息
         let options = await optionsStorage.getAll();
         let setting = new Setting();
         setting.gistID = options.gistID;

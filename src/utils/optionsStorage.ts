@@ -1,6 +1,9 @@
 import OptionsSync from 'webext-options-sync';
 /* global OptionsSync */
 
+/**
+ * 配置信息存储 - 优先存储在 storage.sync，其次会降级到 storage.local
+ */
 export default new OptionsSync({
     defaults: {
         githubToken: '',
