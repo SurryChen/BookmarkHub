@@ -48,11 +48,15 @@ It uses GitHub's Gist records to store browser bookmarks for safe and secure use
 ![BookmarkHub](images/2.png)
 
 ## Features
-* No registration required, just use the Token and Gist of your GitHub account
-* Easy to upload and download bookmarks with one click
-* Clear all local bookmarks with one click
-* Support cross-machine and cross-browser synchronization of bookmarks
-* Support to display the number of local and remote bookmarks
+* **Multi-Gist Support**: Configure multiple GitHub Gist or Gitee Gist configurations
+* **Easy Management**: Add, edit, delete, and activate different Gist configurations
+* **Cross-Platform**: Support for both GitHub and Gitee platforms
+* **No Registration Required**: Just use the Token and Gist of your GitHub/Gitee account
+* **One-Click Sync**: Easy to upload and download bookmarks with one click
+* **Clear All**: Clear all local bookmarks with one click
+* **Cross-Platform Sync**: Support cross-machine and cross-browser synchronization of bookmarks
+* **Bookmark Counter**: Support to display the number of local and remote bookmarks
+* **Modern UI**: Beautiful and intuitive user interface with smooth animations
 
 
 ## Installation
@@ -65,10 +69,58 @@ It uses GitHub's Gist records to store browser bookmarks for safe and secure use
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+### Basic Setup
+
 1. [Login](https://github.com/login) GitHub，If you don't have an account, please [click here to register](https://github.com/join)。
 2. [Create a token that manages the gist](https://github.com/settings/tokens/new)。
 3. [Create a secret gist](https://gist.github.com)。__Note: If it's a public gist, your bookmarks can be searched by others。__
 4. Download BookmarkHub in the browser store, click the plug-in's settings button, fill in the token and gist ID in the pop-up settings window, and you can upload the download bookmark。
+
+### Multi-Gist Configuration
+
+#### Setting Up Multiple Configurations
+
+1. **Open Options Page**: Click the extension icon and select "Settings"
+2. **Choose Platform**: Switch between GitHub and Gitee tabs
+3. **Add Configuration**: Click "Add New Configuration" button
+4. **Configure Settings**:
+   - **Name**: Give your configuration a descriptive name
+   - **Token**: Your GitHub/Gitee personal access token
+   - **Gist ID**: The ID of your Gist
+   - **File Name**: Name of the file in your Gist (default: BookmarkHub)
+   - **Enable Notify**: Toggle notifications for this configuration
+5. **Activate**: Click "Activate" to make this configuration active
+
+#### Managing Configurations
+
+- **Switch Active**: Click "Activate" on any configuration to make it the active one
+- **Edit**: Modify any field in the configuration form - changes are saved automatically
+- **Delete**: Remove configurations you no longer need (at least one configuration must remain)
+- **Add More**: Create unlimited configurations for different purposes
+
+#### Getting Tokens
+
+- **GitHub**: Go to [GitHub Settings > Personal Access Tokens](https://github.com/settings/tokens/new)
+- **Gitee**: Go to [Gitee Personal Access Tokens](https://gitee.com/personal_access_tokens)
+
+## New Features in Latest Version
+
+### 🎨 Enhanced UI/UX
+- Modern gradient design with smooth animations
+- Improved form styling with better visual feedback
+- Responsive design that works on different screen sizes
+- Card-based layout with hover effects
+
+### 🔧 Multi-Gist Configuration
+- **Multiple Configurations**: Add unlimited GitHub Gist or Gitee Gist configurations
+- **Easy Switching**: Activate different configurations with one click
+- **Individual Settings**: Each configuration has its own token, Gist ID, file name, and notification settings
+- **Smart Management**: Delete configurations safely with automatic fallback to the first available configuration
+
+### 🚀 Improved Storage
+- **Structured Data**: New storage format supporting multiple configurations
+- **Backward Compatibility**: Automatic migration from old single-configuration format
+- **Better Organization**: Separate storage for GitHub and Gitee configurations
 
 <!-- ROADMAP -->
 ## Roadmap
